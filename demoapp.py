@@ -17,7 +17,7 @@ def predict():
     For rendering results on HTML GUI
     '''
     review = [ x for x in request.form.values()]
-    refined_review = text_preprocess(review)
+    refined_review = text_preprocess(review[0])
     prediction = model.predict(refined_review)
 
     if(prediction==0):
