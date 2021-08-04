@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-nltk.download()
 import nltk
 from nltk.stem import PorterStemmer
 #create an object of class PorterStemmer
