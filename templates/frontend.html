@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title></title>  
+</head>
+
+<body>
+ <div class="login">
+	<h1>What do you think of DisneyLand???</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	
+        <label for="cars">Choose a venue :</label>
+              <select name="cars" id="cars">
+              <option value="Cali">DisneyLand_California</option>
+              <option value="HK">DisneyLand_HongKong</option>
+              <option value="Paris">DisneyLand_Paris</option>
+              </select>
+        
+        <label for="Rev">Write a review :</label>
+        <input type="text" name="Review" placeholder="Review" required="required" />
+        <button type="submit" id="Predict_button" >Predict</button>
+    </form>
+
+   <br>
+   <br>
+   
+
+ </div>
+
+
+</body>
+</html>
