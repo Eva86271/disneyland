@@ -1,2 +1,2 @@
-# disneyland
+# Disneyland
 An NLP approach to Disneyland
