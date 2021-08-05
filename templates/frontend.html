@@ -11,8 +11,8 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">    	
-        <label for="Rev">Write a review for DisneyLand you visited:</label>
-        <input type="text" name="Review" placeholder="Review" required="required" />
+        <h1>Write a review for DisneyLand you visited:</h1>
+        <textarea name="message" rows="6" cols="50"></textarea>
         <button type="submit">Predict</button>
     </form>
 
