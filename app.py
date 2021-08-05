@@ -18,14 +18,11 @@ def predict():
     For rendering results on HTML GUI
     '''
     print("In predict function")
-    review = [x for x in request.form.values()]
-    rev=review[0]
-    print("Values")
-    print(rev)
-    refined_review = preprocess.text_preprocess(rev)
+    message = request.form['message']
+    refined_review = preprocess.text_preprocess(message)
     print(refined_review)
     refined_review=cv.transform(refined_review).toarray()
-    print(refined_review)
+    print(refined_review.shape)
     prediction = model.predict(refined_review)
     print(prediction)
     if(prediction==0):
