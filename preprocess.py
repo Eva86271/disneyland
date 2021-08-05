@@ -15,7 +15,7 @@ def text_preprocess(item):
    review=review.lower() 
    review=nltk.sent_tokenize(review)   
    words=[nltk.word_tokenize(sent) for sent in review]
-   #for i in range(len(words)):
-     # words[i]=[lem.lemmatize(word) for word in words[i] if word not in stopwords.words('english')]    
+   for i in range(len(words)):
+      words[i]=[porter.stem(word) for word in words[i] if word not in stopwords.words('english')]    
    words=[' '.join(word) for word in words]
    return words
