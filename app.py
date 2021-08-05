@@ -24,7 +24,7 @@ def predict():
     print(rev)
     refined_review = preprocess.text_preprocess(rev)
     print(refined_review)
-    refined_review=cv.transform(refined_review)
+    refined_review=cv.transform(refined_review).toarray()
     print(refined_review)
     prediction = model.predict(refined_review)
     print(prediction)
