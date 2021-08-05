@@ -17,7 +17,10 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
+    print("In predict function")
     review = [ x for x in request.form.values()]
+    print("Values")
+    print(review)
     refined_review = preprocess.text_preprocess(review[0])
     refined_review=cv.transform(refined_review)
     prediction = model.predict(refined_review)
