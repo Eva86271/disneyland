@@ -27,7 +27,7 @@ def predict():
     refined_review=cv.transform(refined_review)
     print(refined_review)
     prediction = model.predict(refined_review)
-    
+    print(prediction)
     if(prediction==0):
         out_txt="Happy with the time spent"
     else:
