@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import nltk
 nltk.download('punkt')
 import re
+from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 #create an object of class PorterStemmer
 from nltk.stem import WordNetLemmatizer
