@@ -12,15 +12,11 @@ porter = PorterStemmer()
 def text_preprocess(item):
    lem=WordNetLemmatizer()
    print("In preprocess")
-   print(item)
-   listToStr = ' '.join([str(item) for elem in item])
-   review=re.sub(r"[^a-zA-Z]",' ', listToStr)
+   for i in range(len(item)):
+    review[i]=re.sub(r"[^a-zA-Z]",' ', item[i])
+    review[i]=review[i].lower() 
    print(review)
-   review=review.lower() 
-   review=list(review)
-   print(review)
-   review=nltk.sent_tokenize(review)
-   print(review)
+   review=nltk.sent_tokenize(review)   
    words=[nltk.word_tokenize(sent) for sent in review]
    print(words)
    #for i in range(len(words)):
