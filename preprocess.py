@@ -11,7 +11,8 @@ porter = PorterStemmer()
 
 def text_preprocess(item):
    lem=WordNetLemmatizer()
-   from sklearn import feature_extraction
+   print("In preprocess")
+   print(item)
    review=re.sub(r"[^a-zA-Z]",' ', item)
    review=review.lower()  
    review=nltk.sent_tokenize(review)
