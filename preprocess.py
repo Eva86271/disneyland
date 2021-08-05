@@ -18,6 +18,7 @@ def text_preprocess(item):
    print(review)
    review=review.lower() 
    review=list(review)
+   print(review)
    review=nltk.sent_tokenize(review)
    print(review)
    words=[nltk.word_tokenize(sent) for sent in review]
