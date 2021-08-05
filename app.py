@@ -21,6 +21,11 @@ def predict():
     refined_review = preprocess.text_preprocess(review[0])
     refined_review=cv.transform(refined_review).toarray()
     prediction = model.predict(refined_review)
+    
+    if(prediction==0):
+        out_txt="Happy with the time spent"
+    else:
+        out_txt="Dissatisfied with the service"
 
     return render_template('frontend.html', prediction_text='You are  $ {}'.format(out_txt))
 
