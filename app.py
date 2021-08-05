@@ -18,7 +18,7 @@ def predict():
     For rendering results on HTML GUI
     '''
     print("In predict function")
-    review = request.form.values()
+    review = request.form.values()[0]
     print("Values")
     print(review)
     refined_review = preprocess.text_preprocess(review)
