@@ -10,6 +10,8 @@ porter = PorterStemmer()
 
 def text_preprocess(item):
    lem=WordNetLemmatizer()
+   from sklearn import feature_extraction
+   td=feature_extraction.text.TfidfVectorizer()
    review=re.sub(r"[^a-zA-Z]",' ', item)
    review=review.lower()  
    review=nltk.sent_tokenize(review)
@@ -18,5 +20,5 @@ def text_preprocess(item):
      # words[i]=[lem.lemmatize(word) for word in words[i] if word not in stopwords.words('english')]    
    words=[' '.join(word) for word in words]
    print(words)
-   transformed_review=td.transform(words)
+   transformed_review=td.fit_transform(words)
    return transformed_review
