@@ -11,15 +11,11 @@ from sklearn import feature_extraction
 porter = PorterStemmer()
 def text_preprocess(item):
    lem=WordNetLemmatizer()
-   print("In preprocess")
    review=re.sub(r"[^a-zA-Z]",' ', item)
    review=review.lower() 
-   print(review)
    review=nltk.sent_tokenize(review)   
    words=[nltk.word_tokenize(sent) for sent in review]
-   print(words)
    #for i in range(len(words)):
      # words[i]=[lem.lemmatize(word) for word in words[i] if word not in stopwords.words('english')]    
    words=[' '.join(word) for word in words]
-   print(words)
    return words
