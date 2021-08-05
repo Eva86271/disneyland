@@ -6,7 +6,7 @@ import pickle
 
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
-
+cv=pickle.load(open('transform.pkl', 'rb'))
 @app.route('/')
 def home():
     return render_template('frontend.html')
@@ -17,7 +17,8 @@ def predict():
     For rendering results on HTML GUI
     '''
     review = [ x for x in request.form.values()]
-    refined_review = text_preprocess(review[0])
+    refined_review = preprocess.text_preprocess(review[0])
+    refined_review=cv.transform(refined_review)
     prediction = model.predict(refined_review)
 
     if(prediction==0):
