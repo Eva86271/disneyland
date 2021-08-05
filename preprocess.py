@@ -5,6 +5,7 @@ import nltk
 nltk.download('punkt')
 import re
 from nltk.corpus import stopwords
+nltk.download('stopwords')
 from nltk.stem import PorterStemmer
 #create an object of class PorterStemmer
 from nltk.stem import WordNetLemmatizer
