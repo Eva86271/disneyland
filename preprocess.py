@@ -17,7 +17,7 @@ def text_preprocess(item):
    review=re.sub(r"[^a-zA-Z]",' ', listToStr)
    print(review)
    review=review.lower() 
-   print(review)
+   review=list(review)
    review=nltk.sent_tokenize(review)
    print(review)
    words=[nltk.word_tokenize(sent) for sent in review]
