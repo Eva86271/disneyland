@@ -7,7 +7,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
-vectorzer=pickle.load(open('trans_vect.pkl', 'rb'))
+vectorzer=pickle.load(open('trans_vect1.pkl', 'rb'))
 
 @app.route('/')
 def home():
