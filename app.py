@@ -3,6 +3,7 @@ import numpy as np
 import preprocess
 from flask import Flask, request, jsonify, render_template
 import pickle
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
@@ -18,7 +19,7 @@ def predict():
     For rendering results on HTML GUI
     '''
     print("In predict function")
-    message = request.form['message']
+    message = request.form['message'].trim()
     refined_review = preprocess.text_preprocess(message)
     print(refined_review)
     refined_review=cv.transform(refined_review).toarray()
