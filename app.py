@@ -28,7 +28,7 @@ def predict():
     else:
         out_txt="Dissatisfied with the service"
 
-return render_template('frontend.html', prediction_text='You are  $ {}'.format(out_txt))
+    return render_template('frontend.html', prediction_text='You are  $ {}'.format(out_txt))
 
 if __name__ == "__main__":
     app.run(debug=True)
