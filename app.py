@@ -7,7 +7,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
-cv=pickle.load(open('transform_vect.pkl', 'rb'))
+vectorzer=pickle.load(open('trans_vect.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -22,7 +22,7 @@ def predict():
     message = request.form['message']
     refined_review = preprocess.text_preprocess(message)
     print(refined_review)
-    refined_review=cv.transform(refined_review).toarray()
+    refined_review=vectorzer.transform(refined_review).toarray()
     print(refined_review.shape)
     prediction = model.predict(refined_review)
     print(prediction)
