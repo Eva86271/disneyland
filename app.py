@@ -28,10 +28,12 @@ def predict():
     print(prediction)
     if(prediction[0]==0):
         out_txt="Happy with the time spent"
+        print(out_txt)
     else:
         out_txt="Dissatisfied with the service"
+        print(out_txt)
 
-    return render_template('frontend.html', prediction_text='So ! What we think that, You are {}'.format(out_txt))
+    return render_template('frontend.html', prediction_text='So ! What we think that '+ out_txt)
 
 if __name__ == "__main__":
     app.run(debug=True)
