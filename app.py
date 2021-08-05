@@ -21,7 +21,7 @@ def predict():
     review = [x for x in request.form.values()]
     rev=review[0]
     print("Values")
-    print(review)
+    print(rev)
     refined_review = preprocess.text_preprocess(rev)
     print(refined_review)
     refined_review=cv.transform(refined_review)
